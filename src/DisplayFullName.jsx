@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 
 const DisplayFullName = () => {
     const [fields, setFields] = useState({});
-    const [error, setError] = useState()
+    const [error, setError] = useState();
+    const [fullName, setFullname] = useState();
 
     const handleChange = (field, value) => {
         setFields({...fields,[field]:value})
@@ -16,6 +17,11 @@ const DisplayFullName = () => {
             setError("Please fill out this field");
             return;
         }
+        else if(!formFields['lastname']){
+            setError("Please fill out this field");
+            return;
+        }
+        setFullname(`Full Name : ${formFields['firstname']} ${formFields['lastname']}`)
     }
   return (
     <div>
@@ -35,7 +41,9 @@ const DisplayFullName = () => {
         </div>
         <button onClick={(e) => handleSubmit(e)}>Submit</button>
         </form>
-       
+        <div>
+              {fullName}
+        </div>
     </div>
   )
 }
