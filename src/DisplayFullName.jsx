@@ -50,9 +50,12 @@ const DisplayFullName = () => {
         </div>
         <button type='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
         </form>
-        <div>
+        { fullName && 
+            <div>
               {fullName}
         </div>
+        }
+        
     </div>
   )
 }
