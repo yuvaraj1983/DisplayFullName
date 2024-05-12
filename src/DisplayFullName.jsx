@@ -27,7 +27,7 @@ const DisplayFullName = () => {
             setErrors({['lastname']:"Please fill out this field"})
             return;
         }
-        setFullname(`Full Name : ${formFields['firstname']} ${formFields['lastname']}`)
+        setFullname(`Full Name: ${formFields['firstname']} ${formFields['lastname']}`)
     }
   return (
     <div>
